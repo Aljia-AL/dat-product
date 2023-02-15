@@ -1,0 +1,87 @@
+//exercie1
+ALGORITHM distinct_element
+VAR
+    set1,set2 : ARRAY_OF INTEGER[]
+    i,j: INTEGER:=0;
+    sum : INTEGER:= 0;
+    exist : BOOLEAN:= false;
+BEGIN
+    read(set1);
+    write(set1);
+    read(set2):
+    write(set2);
+
+    FOR i FROM 0 TO set1.lenght-1 STEP step  DO
+    exist:= false;
+
+    FOR i FROM 0 TO set2.lenght-1 STEP step  DO
+    IF (set[i]= set2[j]) THEN
+        exist:= true;
+    END_IF
+    END_FOR
+
+
+    IF (exist = false) THEN
+        sum:= sum + set2[i]
+    END_IF
+    END_FOR
+    write(sum)
+END
+
+//exercice2
+PROCEDURE Dot_product(u1: ARRAY_OF FLOAT[], u2: ARRAY_OF FLOAT[])
+VAR
+    i: INTEGER;
+    ps: INTEGER :=0;
+BEGIN
+    FOR i FROM 0 TO u1.lenght-1 STEP 1  DO
+        ps = ps + u1[i]*u2[i]
+    END_FOR
+END
+
+
+//function
+
+FUNCTION Dot_product(u1: ARRAY_OF FLOAT[], u2: ARRAY_OF FLOAT[]) : FLOAT
+VAR
+    i: INTEGER;
+    ps: INTEGER :=0;
+BEGIN
+     FOR i FROM 0 TO u1.lenght-1 STEP 1  DO
+        ps = ps + u1[i]*u2[i]
+    END_FOR
+    RETURN ps ; 
+END
+
+
+
+ALGORITHM Dot_product
+VAR
+    i: INTEGER;
+    vec1,vec2: ARRAY_OF FLOAT [];
+    ps: INTEGER:=0;
+    
+BEGIN
+    FOR i FROM 0 TO vec1.lenght-1 STEP 1  DO
+    read(vec1[i])
+        write(vec1[i])
+    END_FOR
+
+     FOR i FROM 0 TO vec2.lenght-1 STEP 1  DO
+    read(vec2[i])
+        write(vec2[i])
+    END_FOR
+
+    IF (vec1.lenght = vec2.lenght) THEN
+        ps = Dot_product (vec1,vec2)
+        IF (ps = 0) THEN
+            write("vec1 et vec2 sont orthogonaux")
+        END_IF
+
+        ELSE
+            write("vec1 et vec2 ne sont pas orthogonaux")
+    
+    END_IF
+
+
+END
